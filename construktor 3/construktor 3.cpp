@@ -17,3 +17,33 @@ public:
 
     Mahasiswa(string pnama) : nama(pnama) { setID(); }
 };
+
+int Mahasiswa::nim = 151;
+
+void Mahasiswa::setID() {
+    id = ++nim;
+}
+
+void Mahasiswa::printAll() {
+    cout << "ID =" << id << endl;
+    cout << "Nama =" << nama << endl;
+    cout << endl;
+}
+
+int main() {
+    Mahasiswa mhs1("Sri Dadi");
+    Mahasiswa mhs2("Budi Jatmiko");
+    Mahasiswa::setNim(9);   //mengakakses nim melalui static member function "setNim"
+    Mahasiswa mhs3("Andi Janu");
+    Mahasiswa mhs4("Joko Wahono");
+
+    mhs1.printAll();
+    mhs2.printAll();
+    mhs3.printAll();
+    mhs4.printAll();
+
+    cout << "akses dari luar object = " << Mahasiswa::getNim() << endl; //Mengakses nim
+    system("pause");
+
+    return 0;
+}
