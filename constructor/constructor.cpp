@@ -15,3 +15,9 @@ public:
 	}
 };
 
+int Mahasiswa::nim = 151;
+
+void Mahasiswa::setID() {
+	id = ++nim;
+}
+
